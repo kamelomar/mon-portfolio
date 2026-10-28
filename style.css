@@ -118,30 +118,50 @@ nav a:focus-visible {
 }
 
 footer {
-    background-color: black;
-    color: white;
-    padding: 40px 20px;
+   
+/* ===== Design du footer ===== */
+
+footer {
+    background-color: #1d3557;
+    color: #f1faee;
+    padding: 40px 30px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 30px;
+    margin-top: 30px;
 }
 
 footer section,
 footer nav {
     flex: 1;
     min-width: 200px;
-    background-color: #333;
+    background-color: transparent;
+    padding: 10px;
 }
 
 footer h2,
 footer h3 {
+    margin-top: 0;
     margin-bottom: 15px;
+}
+
+footer h2 {
+    color: #ffffff;
+}
+
+footer h3 {
+    color: #a8dadc;
+}
+
+footer p {
+    line-height: 1.7;
 }
 
 footer ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 footer li {
@@ -151,23 +171,42 @@ footer li {
 footer a {
     text-decoration: none;
     color: inherit;
+    transition: color 0.3s ease;
 }
 
-footer > p {
-    min-height: 180px;
-    width: 100%;
-    text-align: center;
-    border-top: 1px solid;
-    padding-top: 20px;
-    margin-bottom: 0;
+footer a:hover {
+    color: #a8dadc;
+    text-decoration: underline;
 }
+
+/* Ligne du copyright */
+footer .footer-bas {
+    flex-basis: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 18px 0;
+    text-align: center;
+}
+
+footer .footer-bas p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #dbe7f0;
+}
+
 /* Adaptation aux petits écrans */
 
 @media (max-width: 768px) {
   body {
     grid-template-columns: 1fr;
   }
+footer section,
+footer nav {
+    flex-basis: 100%;
+}
 
+footer {
+    padding: 25px 15px 0;
+}
   nav {
     flex-wrap: wrap;
     gap: 10px;
