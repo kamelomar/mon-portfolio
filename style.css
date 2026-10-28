@@ -1,0 +1,236 @@
+/*créer des variables de couleurs à utiliser le ong du code*/
+:root {
+  --couleur-principale: #1d3557;
+  --couleur-secondaire: #457b9d;
+  --fond-clair: #f8f9fa;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+}
+header, nav, footer{
+  grid-column: 1 / -1
+}
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: var(--couleur-principale);
+  color: white;
+  border-radius: 10px;
+}
+main {
+   background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+main section {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+main h2 {
+  color: #1d3557;
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+}
+
+main h3 {
+  color: #457b9d;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+#projets article {
+  padding: 20px;
+  margin-bottom: 15px;
+  background-color: #f8f9fa;
+  border-left: 4px solid #457b9d;
+  border-radius: 6px;
+}
+
+#projets article {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#projets article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+/*alterner les couleurs des cartes...Ici le h2 est compris comme enfant de #projets*/
+#projets article:nth-child(even) {
+  background-color: #eaf2f8;
+}
+/*si pour cibler uniquement les cartes, en dehors du h2:
+
+#projets article:nth-of-type(even) {
+  background-color: #eaf2f8;
+}
+*/
+
+
+aside {
+  padding: 25px;
+  background-color: #eaf2f8;
+  border-radius: 10px;
+  align-self: start;/*fait en sorte que aside reste à la hauteur nécessaire à son contenu, plutôt que de s'étirer sur toute la hauteur de la ligne de la grille.*/
+}
+
+aside h2 {
+  color: #1d3557;
+  margin-bottom: 15px;
+}
+
+aside ul {
+  padding-left: 20px; /* conserve un retrait pour la liste.*/
+}
+
+aside li {
+  margin-bottom: 10px;/*espace les compétences verticalement.*/
+}
+
+body > nav {
+  background-color: paleturquoise;
+  display:flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+  border-radius: 8px;
+}
+body > nav a {
+  text-decoration:none;
+   color: #333;
+   padding: 8px 12px;
+}
+body > nav a:hover {
+  color: #0077b6;
+   background-color: #d9f0f7;
+}
+/*navigation au clavier: outline dessine un contour...*/
+nav a:focus-visible {
+  outline: 3px solid #0077b6;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+footer section,
+footer nav {
+    flex: 1;
+    min-width: 200px;
+    background-color: #333;
+}
+
+footer h2,
+footer h3 {
+    margin-bottom: 15px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer li {
+    margin-bottom: 10px;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+footer > p {
+    min-height: 180px;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid;
+    padding-top: 20px;
+    margin-bottom: 0;
+}
+/* Adaptation aux petits écrans */
+
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+  main {
+    padding: 15px;
+  }
+
+  main section {
+    padding: 15px;
+  }
+
+  header {
+    padding: 25px 15px;
+  }
+
+  aside {
+    padding: 20px;
+  }
+
+  footer {
+    padding: 25px 15px;
+    gap: 20px;
+  }
+    header h1 {
+    font-size: 1.7rem;
+  }
+
+  main h2 {
+    font-size: 1.3rem;
+  }
+
+  main h3 {
+    font-size: 1.1rem;
+  }
+
+main section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #457b9d;
+  margin-top: 8px;
+  border-radius: 2px;
+  
+}
+
+#retour-haut {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 18px;
+  background-color: #1d3557;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#retour-haut:hover {
+  background-color: #457b9d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
